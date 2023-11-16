@@ -41,6 +41,8 @@ export default function Edit() {
     setLoader(true);
     if(Object.keys(validationUserData(user)).length>0){
     setErrors(validationUserData(user))
+    setLoader(false);
+
 
     }else{
      const {data} = await axios.put(`https://crud-users-gold.vercel.app/users/${id}`,user).catch((error) => {
